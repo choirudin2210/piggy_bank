@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Stocks</h1>
+
+<table id="stocks" class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Balance</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @stocks.each do |stock| %>
+    <%= render stock %>
+  <% end %>
+  </tbody>
+</table>
+
+<% if user_signed_in? %>
+
+<%= link_to "New stock", new_stock_path %>
+
+<% end %>

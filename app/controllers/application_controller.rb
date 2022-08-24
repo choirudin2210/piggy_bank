@@ -1,0 +1,15 @@
+class ApplicationController < ActionController::Base
+  helper_method :current_user
+  before_action :set_current_user
+
+  private
+
+  def set_current_user
+    Current.user = current_user
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
+  end
+  
+end

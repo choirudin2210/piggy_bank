@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1> Wallet <%= @wallet.id %></h1>
+<h1> Balance <%= @wallet.balance %></h1>
+<h2>Pemilik :<%= @wallet.owner.name %></h2>
+<h2>Jenis Pemilik :<%= @wallet.owner_type %></h2>
+
+<h1>Transfers To</h1>
+
+<%= form_tag(wallet_transfers_path) do |form| %>
+  <select class="form-select" aria-label="Default select example" name="to_wallet_id">
+    <% @wallets.each do |wallet|%>
+    <option value="<%= wallet.id %>"><%= wallet.owner_type %>-<%= wallet.owner.name %></option>
+    <% end %>
+  </select>
+  <input type="number" name="amount" class="form-control"  placeholder="100">
+  <button type="submit" class="btn btn-primary">Transfer</button>
+<% end %>

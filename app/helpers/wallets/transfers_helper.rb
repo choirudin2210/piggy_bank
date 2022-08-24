@@ -1,0 +1,2 @@
+module Wallets::TransfersHelper
+end

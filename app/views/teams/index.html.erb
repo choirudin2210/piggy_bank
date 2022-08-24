@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Teams</h1>
+
+<table id="teams" class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Balance</th>
+      <th>Action</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @teams.each do |team| %>
+    <%= render team %>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New team", new_team_path %>
